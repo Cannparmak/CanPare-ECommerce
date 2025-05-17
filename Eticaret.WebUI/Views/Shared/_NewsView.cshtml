@@ -1,0 +1,19 @@
+﻿@model News
+
+<div class="col mb-4">
+    <a href="/News/Details/@Model.Id" class="news-link">
+        <img src="/Img/@Model.Image" alt="@Model.Name" class="img-fluid news-image" />
+    </a>
+</div>
+
+<style>
+    .news-image {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border-radius: 10px;
+    }
+
+    .news-link:hover .news-image {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+</style>

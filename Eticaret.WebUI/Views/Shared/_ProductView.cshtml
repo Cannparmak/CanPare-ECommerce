@@ -1,0 +1,55 @@
+﻿@model Product
+
+<div class="col mb-5">
+    <div class="card product-card h-100">
+        <!-- Sale badge -->
+        <div class="badge position-absolute" style="top: 0.5rem; right: 0.5rem">
+            <form asp-action="Add" asp-controller="Favorites">
+                <input type="hidden" name="ProductId" value="@Model.Id" />
+                <button class="btn btn-transparent" type="submit" style="box-shadow: none">
+                    <i class="bi-heart"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Product image -->
+        <a href="/Products/Details/@Model.Id">
+            <img class="card-img-top" src="~/Img/Products/@Model.Image" alt="@Model.Name"
+                 style="width: 100%; height: 250px; object-fit: contain; background: #fff;">
+        </a>
+
+        <!-- Product details -->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <h5 class="fw-bolder">@Model.Name</h5>
+                <span class="text-muted text-decoration-line-through">@((Model.Price * 1.2M).ToString("C0"))</span><br />
+                <span>@Model.Price.ToString("C0")</span>
+            </div>
+        </div>
+
+        <!-- Product actions -->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <form action="/Cart/Add" method="post">
+                <input type="hidden" name="ProductId" value="@Model.Id" />
+                <div class="text-center">
+                    <button class="btn btn-outline-success mt-auto" type="submit">
+                        <i class="bi-cart-fill me-1"></i> Sepete Ekle
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- CSS Animasyon -->
+<style>
+    .product-card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border-radius: 10px;
+    }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+</style>

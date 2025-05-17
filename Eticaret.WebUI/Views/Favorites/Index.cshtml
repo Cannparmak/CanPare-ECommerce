@@ -1,0 +1,69 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Favorilerim";
+}
+<style>
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        z-index: 10;
+        position: relative;
+    }
+</style>
+<section class="container my-5">
+    <div class="text-center">
+        <h1 class="display-4">Favorilerim</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            @if (Model.Any())
+            {
+                <div class="row mt-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                            <div class="card h-100 shadow-sm">
+                                <a href="/Products/Details/@item.Id" class="text-decoration-none">
+                                    <div class="ratio ratio-4x3">
+                                        <img src="/Img/Products/@item.Image" class="card-img-top object-fit-cover" alt="@item.Name" style="object-fit: contain; padding: 10px;" />
+                                    </div>
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    <p class="card-text fw-bold">@item.Price.ToString("c")</p>
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <a href="/Cart/Add/@item.Id" class="btn btn-outline-success flex-grow-1">
+                                            <i class="bi bi-cart-plus"></i> Sepete Ekle
+                                        </a>
+                                        <form asp-action="Remove" asp-controller="Favorites" method="post">
+                                            <input type="hidden" name="ProductId" value="@item.Id" />
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="bi bi-x-lg"></i> Kaldır
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="container">
+                    <div class="alert alert-secondary my-5 text-center">
+                        <h1>Burada Şimdilik Kimse Yok 🙈</h1>
+                        <h5>Favorilerinizde ürün bulunmamaktadır!</h5>
+                        <p>
+                            <a href="/Products/Index" class="btn btn-warning mt-3">Tüm ürünleri keşfet</a>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <img src="~/Img/Favoriler.gif" alt="Favoriler" class="img-fluid mt-4" style="max-height: 300px;" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

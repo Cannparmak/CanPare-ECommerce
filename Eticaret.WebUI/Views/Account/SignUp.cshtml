@@ -1,0 +1,109 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Üye Ol";
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<!-- Şifreyi Göster/Gizle Scripti -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("passwordInput");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordInput.type === "password" ? "text" : "password";
+            passwordInput.type = type;
+
+            // Icon değiştir
+            const icon = this.querySelector("i");
+            icon.classList.toggle("fa-eye");
+            icon.classList.toggle("fa-eye-slash");
+        });
+    });
+</script>
+<style>
+    .custom-card {
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        transition: transform 0.3s ease;
+    }
+
+        .custom-card:hover {
+            transform: scale(1.02);
+        }
+
+    .custom-image {
+        display: block;
+        margin: 40px auto 20px auto;
+        max-width: 100%;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Üstteki resim -->
+            <img src="~/Img/Logo.png" alt="Oyuncakçı Logo" class="custom-image" />
+
+            <div class="custom-card">
+                <h2 class="text-center mb-4">Üye Ol</h2>
+                <hr />
+                <form asp-action="SignUp">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Surname" class="control-label"></label>
+                        <input asp-for="Surname" class="form-control" />
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <div class="input-group">
+                            <input asp-for="Password" class="form-control" type="password" id="passwordInput" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3 text-center">
+                        <button type="submit" class="btn btn-warning px-4">
+                            <i class="fa-solid fa-plus"></i> Üye Ol
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

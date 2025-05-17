@@ -1,0 +1,55 @@
+﻿@model Comment
+
+@{
+    ViewData["Title"] = "Yorum Sil";
+}
+<h3 class="text-danger fs-5">Yorumu silmek istediğinize emin misiniz ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AppUser.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @for (int i = 1; i <= 5; i++)
+            {
+                if (i <= Model.Rating)
+                {
+                    <i class="fa-solid fa-star text-warning"></i>
+                }
+                else
+                {
+                    <i class="fa-regular fa-star text-muted"></i>
+                }
+            }
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">
+            <i class="fa-solid fa-trash"></i> Sil
+        </button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            <i class="fa-solid fa-arrow-left"></i> Listeye Dön
+        </a>
+    </form>
+</div>

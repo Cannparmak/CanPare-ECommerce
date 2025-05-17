@@ -1,0 +1,97 @@
+﻿@model ProductDetailViewModel
+
+@{
+    ViewData["Title"] = Model.Product.Name;
+}
+
+<!-- Product section-->
+<section class="">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0" src="~/Img/Products/@Model.Product.Image" alt="..." style="width: 100%; max-width: 400px; height: auto; object-fit: contain;">
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1">Ürün Kodu: @Model.Product.ProductCode</div>
+                <h1 class="display-5 fw-bolder">@Model.Product.Name</h1>
+                <div class="fs-5 mb-5">
+                    <span>@Model.Product.Price.ToString("c")</span>
+                </div>
+                <p class="lead">@Model.Product.Description</p>
+                <div class="d-flex">
+                    <form asp-action="Add" asp-controller="Cart" class="d-flex">
+                        <input type="hidden" name="ProductId" value="@Model.Product.Id" />
+                        <input class="form-control text-center me-3" name="quantity" id="inputQuantity" type="number" value="1" style="max-width: 5rem">
+                        <button class="btn btn-cart flex-shrink-0" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Sepete Ekle
+                        </button>
+                    </form>
+                    <form asp-action="Add" asp-controller="Favorites" class="d-flex ms-2">
+                        <input type="hidden" name="ProductId" value="@Model.Product.Id" />
+                        <button class="btn btn-favorite flex-shrink-0" type="submit">
+                            <i class="bi-heart-fill me-1"></i>
+                            Favorilere Ekle
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related items section-->
+<section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">İlişkili Ürünler</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model.RelatedProducts)
+            {
+                <partial name="_ProductView" model="item" />
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Buton Stilleri -->
+<style>
+    .custom-btn {
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        transition: all 0.3s ease;
+    }
+
+        .custom-btn:hover {
+            background-color: #ffc107; /* warning sarısı */
+            border-color: #ffc107;
+            color: black;
+            transform: scale(1.05);
+        }
+
+    .btn-cart {
+        color: #198754; /* Bootstrap success yeşili */
+        background-color: white;
+        border: 2px solid #198754;
+        transition: all 0.3s ease;
+    }
+
+        .btn-cart:hover {
+            background-color: #198754;
+            color: white;
+            transform: scale(1.05);
+        }
+
+    .btn-favorite {
+        color: #dc3545; /* Bootstrap danger kırmızısı */
+        background-color: white;
+        border: 2px solid #dc3545;
+        transition: all 0.3s ease;
+    }
+
+        .btn-favorite:hover {
+            background-color: #dc3545;
+            color: white;
+            transform: scale(1.05);
+        }
+</style>

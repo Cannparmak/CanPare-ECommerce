@@ -1,0 +1,251 @@
+﻿@using Eticaret.WebUI.ExtensionMethods
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    .navbar {
+        background-color: #FFFFFF !important;
+    }
+
+    a.nav-link:hover {
+        background-color: #FFC107;
+        text-decoration: none;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 5px !important;
+        display: inline-block;
+    }
+
+    .dropdown {
+        margin: 0 5px !important;
+    }
+
+    .search-form {
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .search-input {
+        padding-right: 40px;
+        border-radius: 20px;
+        border: 1px solid #FFC107;
+        transition: all 0.3s ease;
+    }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+            border-color: #FFC107;
+        }
+
+    .search-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        background: #FFC107;
+        border-radius: 0 20px 20px 0;
+        padding: 0.375rem 0.75rem;
+        color: #212529;
+        transition: all 0.3s ease;
+    }
+
+        .search-button:hover {
+            background-color: #e0a800;
+            color: #fff;
+        }
+
+    .navbar-collapse {
+        justify-content: space-between !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center;
+    }
+
+    .navbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+        .navbar-actions a.btn {
+            border-radius: 25px;
+            padding: 6px 14px;
+            font-weight: 500;
+        }
+
+    .dropdown-menu {
+        max-height: 300px;
+        overflow-y: auto;
+        min-width: 220px;
+        max-width: 250px;
+        white-space: nowrap;
+        padding: 4px 0;
+    }
+
+        .dropdown-menu .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+            .dropdown-menu .dropdown-item img {
+                width: 48px;
+                height: 48px;
+                object-fit: contain;
+                border-radius: 6px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+            }
+
+        .dropdown-menu a.dropdown-item span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 6px 10px;
+    }
+
+    /* GÜNCELLENMİŞ BOYUT STİLLERİ */
+    .navbar-actions a.btn,
+    .navbar-actions .dropdown-toggle {
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 22px;
+    }
+
+    .navbar-actions i {
+        font-size: 15px;
+    }
+
+    .navbar-actions .badge {
+        font-size: 12px;
+        padding: 4px 7px;
+    }
+
+    .navbar-actions {
+        gap: 8px;
+    }
+    /* Arama kutusunu küçült */
+    .search-input {
+        padding: 5px 35px 5px 12px; /* üst-alt: 5px, sağ: 35px, sol: 12px */
+        font-size: 14px;
+        height: 36px;
+    }
+
+    /* Arama butonunu küçült */
+    .search-button {
+        padding: 0.3rem 0.6rem;
+        font-size: 14px;
+        height: 36px;
+    }
+</style>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/Img/Logo.png" alt="Canpare Logo" height="70" width="200" class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse d-sm-inline-flex">
+                <form action="/Products" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-form" role="search">
+                    <input name="q" type="search" class="form-control search-input" placeholder="Ara..." aria-label="Search">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <ul class="navbar-nav mx-auto d-flex align-items-center flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                    </li>
+                    @await Component.InvokeAsync("Categories")
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Tüm Ürünler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">İletişim</a>
+                    </li>
+                </ul>
+
+                <div class="navbar-actions">
+                    @if (Context.User.Identity.IsAuthenticated)
+                    {
+                        <div class="dropdown">
+                            <a class="btn btn-warning dropdown-toggle nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Hesabım
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Account">Bilgilerim</a></li>
+                                <li><a class="dropdown-item" href="/Account/SignOut">Oturumu Kapat</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            <a class="btn btn-warning dropdown-toggle nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Giriş Yap
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Account/SignIn">Üye Girişi</a></li>
+                                <li><a class="dropdown-item" href="/Account/SignUp">Üye Ol</a></li>
+                            </ul>
+                        </div>
+                    }
+
+                    @{
+                        var cart = Context.Session.GetJsson<Eticaret.Service.Concrete.CartService>("Cart");
+                        if (cart != null && cart.CartLines.Count > 0)
+                        {
+                            <div class="dropdown">
+                                <a class="btn btn-warning dropdown-toggle nav-link text-dark d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-shopping-cart"></i> Sepetim
+                                    <span class="badge bg-danger ms-1">@cart.CartLines.Count</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @foreach (var item in cart.CartLines)
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" href="/Products/Details/@item.Product.Id">
+                                                <img src="/Img/Products/@item.Product.Image" alt="" />
+                                                <span>@item.Product.Name</span>
+                                                <span>@item.Product.Price.ToString("c") ₺</span>
+                                            </a>
+                                        </li>
+                                    }
+                                    <li class="text-center">
+                                        <a class="btn btn-success m-auto mt-2" href="/Cart">Sepete Git</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-warning d-flex align-items-center gap-2 text-dark" href="/Cart">
+                                <i class="fas fa-shopping-cart text-warning"></i> Sepetim
+                            </a>
+                        }
+                    }
+
+                    <a class="btn btn-outline-warning d-flex align-items-center gap-2 text-dark" href="/Favorites">
+                        <i class="fas fa-heart text-danger"></i> Favorilerim
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

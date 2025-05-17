@@ -1,0 +1,117 @@
+﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Sepetim";
+}
+<style>
+    tr.product-row:hover {
+        background-color: #fff3cd !important; /* Bootstrap uyarı sarısı */
+        transition: background-color 0.3s ease-in-out;
+    }
+</style>
+<section class="container my-5">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Sepetim</h1>
+    </div>
+    <div class="row">
+        @if (Model.CartLines.Any())
+        {
+            <div class="col-md-8">
+                <div class="table-responsive shadow-sm rounded">
+                    <table class="table table-bordered table-striped table-hover align-middle">
+                        <thead class="table-light">
+                            <tr class="text-center">
+                                <th style="width: 60px;"></th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Toplam</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartLines)
+                            {
+                                <tr class="product-row">
+                                    <td class="text-center">
+                                        <img src="/Img/Products/@item.Product.Image" alt="@item.Product.Name" class="img-fluid rounded" style="height: 45px;" />
+                                    </td>
+                                    <td>
+                                        <a class="text-decoration-none text-dark fw-semibold" href="/Products/Details/@item.Product.Id">
+                                            @item.Product.Name
+                                        </a>
+                                    </td>
+                                    <td class="text-center">@item.Product.Price.ToString("c")</td>
+                                    <td>
+                                        <form asp-action="Update" asp-controller="Cart" method="post" class="d-flex align-items-center">
+                                            <input type="hidden" name="ProductId" value="@item.Product.Id" />
+                                            <input type="number" name="Quantity" value="@item.Quantity" min="1" class="form-control form-control-sm me-2" style="width: 70px;" />
+                                            <button class="btn btn-sm btn-outline-success" type="submit">
+                                                <i class="bi bi-arrow-repeat"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="text-center">
+                                        @((item.Quantity * item.Product.Price).ToString("c"))
+                                    </td>
+                                    <td class="text-center">
+                                        <form asp-action="Remove" asp-controller="Cart" method="post">
+                                            <input type="hidden" name="ProductId" value="@item.Product.Id" />
+                                            <button class="btn btn-sm btn-outline-danger" type="submit">
+                                                <i class="bi bi-x-lg"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Sepet Özeti</h4>
+                        <table class="table">
+                            <tr>
+                                <td>Aratoplam</td>
+                                <td class="text-end">@Model.TotalPrice.ToString("c")</td>
+                            </tr>
+                            <tr>
+                                <td>Kargo</td>
+                                <td class="text-end">
+                                    @(Model.TotalPrice > 500 ? "Ücretsiz" : Model.CartLines.Any() ? "50₺" : "0₺")
+                                </td>
+                            </tr>
+                            <tr class="fw-bold">
+                                <td>Sipariş Toplamı</td>
+                                <td class="text-end">
+                                    @(Model.TotalPrice > 500 ? Model.TotalPrice.ToString("c") : (Model.CartLines.Any() ? (Model.TotalPrice + 50).ToString("c") : Model.TotalPrice.ToString("c")))
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="d-grid mt-3">
+                            <a href="/Cart/Index" class="btn btn-warning btn-lg">Satın Al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="container">
+                <div class="alert alert-secondary my-5 text-center shadow-sm">
+                    <h1>Sepetin Uyuyor Olmalı 😴</h1>
+                    <h5>Sepetinizde ürün bulunmamaktadır!</h5>
+                    <p>
+                        <a href="/Products/Index" class="btn btn-warning mt-3">Alışverişe Başla</a>
+                    </p>
+                </div>
+                <div class="text-center">
+                    <img src="~/Img/Sevimli Çizimler.gif" alt="Sepet Boş" class="img-fluid mt-4" style="max-height: 300px;" />
+                </div>
+            </div>
+        }
+    </div>
+</section>

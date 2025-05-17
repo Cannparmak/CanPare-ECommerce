@@ -1,0 +1,87 @@
+﻿@model IEnumerable<News>
+
+@{
+    ViewData["Title"] = "Duyuru ve Kampanyalar Sayfası";
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <input type="text" id="searchInput" class="form-control w-50" placeholder="Başlık, açıklama veya kategori adı ile ara..." />
+    <a asp-action="Create" class="btn btn-outline-primary align-self-center">
+        <i class="fa-solid fa-plus"></i> Duyuru veya Kampanya Ekle
+    </a>
+</div>
+
+<table id="newsTable" class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Image)</th>
+            <th>@Html.DisplayNameFor(model => model.CreateDate)</th>
+            <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+            <th>@Html.DisplayNameFor(model => model.Category)</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>
+                        <img src="/Img/@item.Image" alt="Görsel" height="30"
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal"
+                             data-bs-target="#imageModal"
+                             onclick="showImage('/Img/@item.Image')" />
+                    </td>
+                    <td>@item.CreateDate.ToShortDateString()</td>
+                    <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                            <a class="btn btn-sm btn-warning" asp-action="Details" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-info"></i>
+                            </a>
+                            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Görsel Büyütme Modali -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <img id="modalImage" src="" class="img-fluid w-100 rounded" alt="Büyük Resim" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+        <script>
+            document.getElementById("searchInput").addEventListener("keyup", function () {
+                const filter = this.value.toLowerCase();
+                const rows = document.querySelectorAll("#newsTable tbody tr");
+
+                rows.forEach(row => {
+                    const text = row.innerText.toLowerCase();
+                    row.style.display = text.includes(filter) ? "" : "none";
+                });
+            });
+
+            function showImage(src) {
+                document.getElementById("modalImage").src = src;
+            }
+        </script>
+}

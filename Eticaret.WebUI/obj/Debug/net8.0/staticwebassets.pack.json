@@ -1,0 +1,521 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Eticaret.WebUI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Eticaret.WebUI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\110000474741845.jpg",
+      "PackagePath": "staticwebassets\\Img\\110000474741845.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\18087_maisto-fresh-metal-5-li-oyuncak-araba-seti_1.jpg",
+      "PackagePath": "staticwebassets\\Img\\18087_maisto-fresh-metal-5-li-oyuncak-araba-seti_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\49133.jpg",
+      "PackagePath": "staticwebassets\\Img\\49133.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\51ajCKxOdNL.jpg",
+      "PackagePath": "staticwebassets\\Img\\51ajCKxOdNL.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\63612.jpg",
+      "PackagePath": "staticwebassets\\Img\\63612.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\64e52774015071.5c1d44decb063.gif",
+      "PackagePath": "staticwebassets\\Img\\64e52774015071.5c1d44decb063.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\71npljvdpgl._ac_uf1000,1000_ql80_.jpg",
+      "PackagePath": "staticwebassets\\Img\\71npljvdpgl._ac_uf1000,1000_ql80_.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\9a243aa9febde031341be4094a1abbe8.gif",
+      "PackagePath": "staticwebassets\\Img\\9a243aa9febde031341be4094a1abbe8.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\9ffb634d-d1ed-49b9-9eaa-e12b3f85c8d6.jpg",
+      "PackagePath": "staticwebassets\\Img\\9ffb634d-d1ed-49b9-9eaa-e12b3f85c8d6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Canpare (1).png",
+      "PackagePath": "staticwebassets\\Img\\Canpare (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Canpare.png",
+      "PackagePath": "staticwebassets\\Img\\Canpare.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Categories\\night-scenery-landscape-wallpaper-2880x1620_52.jpg",
+      "PackagePath": "staticwebassets\\Img\\Categories\\night-scenery-landscape-wallpaper-2880x1620_52.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Categories\\whatsapp görsel 2024-10-23 saat 19.40.19_c5e674b5.jpg",
+      "PackagePath": "staticwebassets\\Img\\Categories\\whatsapp görsel 2024-10-23 saat 19.40.19_c5e674b5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Favoriler.gif",
+      "PackagePath": "staticwebassets\\Img\\Favoriler.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Logo.png",
+      "PackagePath": "staticwebassets\\Img\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\0002058005001-1.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\0002058005001-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\110000495850964.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\110000495850964.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\49133.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\49133.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\51xdz4txpal._ac_uf894,1000_ql80_.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\51xdz4txpal._ac_uf894,1000_ql80_.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\65233-1094-buyuk-jpg-1094-buyuk.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\65233-1094-buyuk-jpg-1094-buyuk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\7175806163.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\7175806163.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\81ryutm0dul.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\81ryutm0dul.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\hot-wheels-mustang-funny-car-hw-art-cars-112-9124435-sw1500sh1500.webp",
+      "PackagePath": "staticwebassets\\Img\\Products\\hot-wheels-mustang-funny-car-hw-art-cars-112-9124435-sw1500sh1500.webp"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Products\\mutfak-seti-plastik.jpg",
+      "PackagePath": "staticwebassets\\Img\\Products\\mutfak-seti-plastik.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Sevimli Çizimler.gif",
+      "PackagePath": "staticwebassets\\Img\\Sevimli Çizimler.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\SignIn.jpeg",
+      "PackagePath": "staticwebassets\\Img\\SignIn.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Slider\\PeluşOyuncaklar.png",
+      "PackagePath": "staticwebassets\\Img\\Slider\\PeluşOyuncaklar.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Slider\\Tüm Peluş Oyuncaklarda 2 Al bir öde kapmanyası (1).png",
+      "PackagePath": "staticwebassets\\Img\\Slider\\Tüm Peluş Oyuncaklarda 2 Al bir öde kapmanyası (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Slider\\araba.jpg",
+      "PackagePath": "staticwebassets\\Img\\Slider\\araba.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Slider\\figürler.jpg",
+      "PackagePath": "staticwebassets\\Img\\Slider\\figürler.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\Slider\\whatsapp görsel 2025-04-27 saat 14.49.15_7c35180d.jpg",
+      "PackagePath": "staticwebassets\\Img\\Slider\\whatsapp görsel 2025-04-27 saat 14.49.15_7c35180d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\barbie-logo-1959.png",
+      "PackagePath": "staticwebassets\\Img\\barbie-logo-1959.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\barbie_logo.svg",
+      "PackagePath": "staticwebassets\\Img\\barbie_logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\crying_baby-31886.gif",
+      "PackagePath": "staticwebassets\\Img\\crying_baby-31886.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\erisimengeli.gif",
+      "PackagePath": "staticwebassets\\Img\\erisimengeli.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\erisimengeli1.gif",
+      "PackagePath": "staticwebassets\\Img\\erisimengeli1.gif"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\hasbro_4c_no_r.png",
+      "PackagePath": "staticwebassets\\Img\\hasbro_4c_no_r.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\lego-city-2005-logo-png_seeklogo-469574.png",
+      "PackagePath": "staticwebassets\\Img\\lego-city-2005-logo-png_seeklogo-469574.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\lego_logo.svg.png",
+      "PackagePath": "staticwebassets\\Img\\lego_logo.svg.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\masaoyunu.png",
+      "PackagePath": "staticwebassets\\Img\\masaoyunu.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\png-transparent-hot-wheels-logo-hot-wheels-logo-mattel-toy-hot-wheels-game-text-orange-thumbnail.png",
+      "PackagePath": "staticwebassets\\Img\\png-transparent-hot-wheels-logo-hot-wheels-logo-mattel-toy-hot-wheels-game-text-orange-thumbnail.png"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\whatsapp görsel 2025-04-27 saat 23.52.01_4cf9caf1.jpg",
+      "PackagePath": "staticwebassets\\Img\\whatsapp görsel 2025-04-27 saat 23.52.01_4cf9caf1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\whatsapp görsel 2025-04-27 saat 23.52.06_06eaa688.jpg",
+      "PackagePath": "staticwebassets\\Img\\whatsapp görsel 2025-04-27 saat 23.52.06_06eaa688.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\whatsapp görsel 2025-04-27 saat 23.52.11_5c700c02.jpg",
+      "PackagePath": "staticwebassets\\Img\\whatsapp görsel 2025-04-27 saat 23.52.11_5c700c02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\Img\\whatsapp görsel 2025-04-27 saat 23.52.17_d1e0ab99.jpg",
+      "PackagePath": "staticwebassets\\Img\\whatsapp görsel 2025-04-27 saat 23.52.17_d1e0ab99.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\401.html",
+      "PackagePath": "staticwebassets\\admin\\401.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\404.html",
+      "PackagePath": "staticwebassets\\admin\\404.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\500.html",
+      "PackagePath": "staticwebassets\\admin\\500.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\assets\\demo\\chart-area-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-area-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\assets\\demo\\chart-bar-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-bar-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\assets\\demo\\chart-pie-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-pie-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\assets\\demo\\datatables-demo.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\demo\\datatables-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\assets\\img\\error-404-monochrome.svg",
+      "PackagePath": "staticwebassets\\admin\\assets\\img\\error-404-monochrome.svg"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\charts.html",
+      "PackagePath": "staticwebassets\\admin\\charts.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\css\\styles.css",
+      "PackagePath": "staticwebassets\\admin\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\index.html",
+      "PackagePath": "staticwebassets\\admin\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\js\\datatables-simple-demo.js",
+      "PackagePath": "staticwebassets\\admin\\js\\datatables-simple-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\admin\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\layout-sidenav-light.html",
+      "PackagePath": "staticwebassets\\admin\\layout-sidenav-light.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\layout-static.html",
+      "PackagePath": "staticwebassets\\admin\\layout-static.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\login.html",
+      "PackagePath": "staticwebassets\\admin\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\password.html",
+      "PackagePath": "staticwebassets\\admin\\password.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\register.html",
+      "PackagePath": "staticwebassets\\admin\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\admin\\tables.html",
+      "PackagePath": "staticwebassets\\admin\\tables.html"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Eticaret.WebUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Eticaret.WebUI.props",
+      "PackagePath": "build\\Eticaret.WebUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Eticaret.WebUI.props",
+      "PackagePath": "buildMultiTargeting\\Eticaret.WebUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Eticaret.WebUI.props",
+      "PackagePath": "buildTransitive\\Eticaret.WebUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

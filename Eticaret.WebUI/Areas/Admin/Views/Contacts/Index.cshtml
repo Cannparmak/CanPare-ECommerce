@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Contact>
+
+@{
+    ViewData["Title"] = "İletişim Formları";
+}
+
+<div class="d-flex justify-content-between mb-3">
+    <input type="text" id="searchInput" class="form-control w-50" placeholder="İsim, soyisim, e-posta  ile ara..." />
+</div>
+
+<table id="contactTable" class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Surname)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Phone)</th>
+            <th>Mesaj</th>
+            <th>@Html.DisplayNameFor(model => model.CreateDate)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-secondary"
+                            onclick="showMessageModal('@item.Name', '@item.Surname', '@item.Email', '@item.Phone', '@item.Message.Replace("'", "\\'")')">
+                        <i class="fa-solid fa-envelope-open-text"></i> Görüntüle
+                    </button>
+                </td>
+                <td>@item.CreateDate.ToShortDateString()</td>
+                <td>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel">Mesaj Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Ad Soyad:</strong> <span id="modalName"></span></p>
+                <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                <p><strong>Telefon:</strong> <span id="modalPhone"></span></p>
+                <hr />
+                <p><strong>Mesaj:</strong></p>
+                <p id="modalMessage" class="bg-light p-3 rounded fw-semibold" style="font-family: 'Segoe UI', sans-serif; font-size: 1.05rem; color: #333;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showMessageModal(name, surname, email, phone, message) {
+            document.getElementById("modalName").innerText = name + " " + surname;
+            document.getElementById("modalEmail").innerText = email;
+            document.getElementById("modalPhone").innerText = phone;
+            document.getElementById("modalMessage").innerText = message;
+            new bootstrap.Modal(document.getElementById('messageModal')).show();
+        }
+
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            const filter = this.value.toLowerCase();
+            const rows = document.querySelectorAll("#contactTable tbody tr");
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(filter) ? "" : "none";
+            });
+        });
+    </script>
+}
