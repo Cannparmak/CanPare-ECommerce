@@ -34,5 +34,6 @@ namespace Eticaret.Core.Entities
         [Display(Name = "Kayıt Tarihi"), ScaffoldColumn(false)]
         public DateTime CreateDate { get; set; } = DateTime.Now;
         public IList<Comment>? Comments { get; set; }
+        public IList<Order>? Orders { get; set; }
     }
 }

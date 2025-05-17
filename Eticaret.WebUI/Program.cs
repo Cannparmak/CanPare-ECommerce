@@ -2,6 +2,7 @@ using Eticaret.Data;
 using Eticaret.Service.Abstract;
 using Eticaret.Service.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
 namespace Eticaret.WebUI
@@ -15,7 +16,7 @@ namespace Eticaret.WebUI
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            //Session Kullanýmý
+            //Session KullanÄ±mÄ±
             builder.Services.AddSession(options =>
             {
                 options.Cookie.Name = ".Eticaret.Session";
@@ -27,6 +28,11 @@ namespace Eticaret.WebUI
 
             builder.Services.AddDbContext<DatabaseContext>();
             builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddScoped<IFavoriteService, FavoriteService>();
+            
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x =>
@@ -57,10 +63,10 @@ namespace Eticaret.WebUI
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession(); //Session Kullanýmý
+            app.UseSession(); //Session KullanÄ±mÄ±
 
-            app.UseAuthentication(); // Önce Oturum Açma Ýþlemi
-            app.UseAuthorization(); // Sonra Yetkilendirme Ýþlemi
+            app.UseAuthentication(); // Ã–nce Oturum AÃ§ma Ä°ÅŸlemi
+            app.UseAuthorization(); // Sonra Yetkilendirme Ä°ÅŸlemi
 
             app.MapControllerRoute(
             name: "admin",

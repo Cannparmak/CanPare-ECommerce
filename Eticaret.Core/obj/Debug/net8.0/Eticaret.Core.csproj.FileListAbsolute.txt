@@ -21,3 +21,5 @@ C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\obj\Debug\net8.0\refint\Etica
 C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\obj\Debug\net8.0\Eticaret.Core.pdb
 C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\obj\Debug\net8.0\ref\Eticaret.Core.dll
 C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\obj\Debug\net8.0\Eticaret.Core.sourcelink.json
+C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\bin\Debug\net8.0\Eticaret.Core.runtimeconfig.json
+C:\Users\Can Parmak\Desktop\Eticaret\Eticaret.Core\obj\Debug\net8.0\Eticaret.Core.genruntimeconfig.cache

@@ -2,14 +2,12 @@
 
 <div class="col mb-5">
     <div class="card product-card h-100">
-        <!-- Sale badge -->
+        <!-- Favori butonu -->
         <div class="badge position-absolute" style="top: 0.5rem; right: 0.5rem">
-            <form asp-action="Add" asp-controller="Favorites">
-                <input type="hidden" name="ProductId" value="@Model.Id" />
-                <button class="btn btn-transparent" type="submit" style="box-shadow: none">
-                    <i class="bi-heart"></i>
-                </button>
-            </form>
+            <button class="btn btn-transparent favorite-button" type="button" style="box-shadow: none" 
+                   data-product-id="@Model.Id" onclick="addToFavorites(@Model.Id, this)">
+                <i class="bi-heart"></i>
+            </button>
         </div>
 
         <!-- Product image -->
@@ -29,14 +27,12 @@
 
         <!-- Product actions -->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <form action="/Cart/Add" method="post">
-                <input type="hidden" name="ProductId" value="@Model.Id" />
-                <div class="text-center">
-                    <button class="btn btn-outline-success mt-auto" type="submit">
-                        <i class="bi-cart-fill me-1"></i> Sepete Ekle
-                    </button>
-                </div>
-            </form>
+            <div class="text-center">
+                <button class="btn btn-outline-success mt-auto cart-button" type="button"
+                        data-product-id="@Model.Id" onclick="addToCart(@Model.Id, this)">
+                    <i class="bi-cart-fill me-1"></i> Sepete Ekle
+                </button>
+            </div>
         </div>
     </div>
 </div>

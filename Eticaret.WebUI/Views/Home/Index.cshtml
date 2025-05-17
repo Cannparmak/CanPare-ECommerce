@@ -14,6 +14,40 @@
     </div>
 </div>
 
+<!-- En Çok Beğenilenler Bölümü -->
+<div class="my-5">
+    <h1 class="text-center">En Çok Beğenilenler</h1>
+    
+    <div class="position-relative favorite-carousel-container">
+        <!-- Sol Ok -->
+        <button class="carousel-control-prev position-absolute" type="button" id="favPrev" 
+                style="left: -30px; top: 45%; z-index: 5; width: 30px; height: 30px; background: rgba(0,0,0,0.3); border-radius: 50%;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        
+        <!-- Kaydırılabilir Alan -->
+        <div class="carousel-container overflow-hidden">
+            <div class="favorite-products d-flex" id="favoriteCarousel">
+                @if (Model.FavoriteProducts != null)
+                {
+                    foreach (var item in Model.FavoriteProducts.Take(4))
+                    {
+                        <div class="favorite-item">
+                            <partial name="_ProductView" model="item" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        
+        <!-- Sağ Ok -->
+        <button class="carousel-control-next position-absolute" type="button" id="favNext"
+                style="right: -30px; top: 45%; z-index: 5; width: 30px; height: 30px; background: rgba(0,0,0,0.3); border-radius: 50%;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
 <div class="my-5">
     <h1 class="text-center">Kampanyalar ve Fırsatlar</h1>
     <div class="row gx-4 gx-lg-5 row-cols-2 justify-content-center ">
@@ -23,3 +57,98 @@
         }
     </div>
 </div>
+
+<style>
+    .favorite-carousel-container {
+        width: 100%;
+        position: relative;
+        padding: 0 40px;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        position: relative;
+    }
+    
+    .favorite-products {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .favorite-item {
+        width: 25%;
+        flex-shrink: 0;
+        padding: 0 10px;
+    }
+    
+    /* Ekran boyutlarına göre responsive tasarım */
+    @@media (max-width: 992px) {
+        .favorite-item {
+            width: 33.33%;
+        }
+    }
+    
+    @@media (max-width: 768px) {
+        .favorite-item {
+            width: 50%;
+        }
+    }
+    
+    @@media (max-width: 576px) {
+        .favorite-item {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('favoriteCarousel');
+        const prevBtn = document.getElementById('favPrev');
+        const nextBtn = document.getElementById('favNext');
+        
+        if (!carousel) return;
+        
+        let position = 0;
+        const items = carousel.querySelectorAll('.favorite-item');
+        if (items.length === 0) return;
+        
+        const itemWidth = items[0].offsetWidth;
+        const visibleItems = 4;
+        const maxPosition = Math.max(0, items.length - visibleItems);
+        
+        updateButtons();
+        
+        prevBtn.addEventListener('click', function() {
+            if (position > 0) {
+                position--;
+                updateCarousel();
+            }
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            if (position < maxPosition) {
+                position++;
+                updateCarousel();
+            }
+        });
+        
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${position * itemWidth}px)`;
+            updateButtons();
+        }
+        
+        function updateButtons() {
+            prevBtn.disabled = position === 0;
+            prevBtn.style.opacity = position === 0 ? '0.3' : '1';
+            
+            nextBtn.disabled = position >= maxPosition;
+            nextBtn.style.opacity = position >= maxPosition ? '0.3' : '1';
+        }
+        
+        window.addEventListener('resize', function() {
+            position = 0;
+            updateCarousel();
+        });
+    });
+</script>

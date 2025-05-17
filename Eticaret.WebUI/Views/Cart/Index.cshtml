@@ -14,7 +14,7 @@
         <h1 class="display-4">Sepetim</h1>
     </div>
     <div class="row">
-        @if (Model.CartLines.Any())
+        @if (Model.CartLines != null && Model.CartLines.Any())
         {
             <div class="col-md-8">
                 <div class="table-responsive shadow-sm rounded">
@@ -45,9 +45,9 @@
                                     <td>
                                         <form asp-action="Update" asp-controller="Cart" method="post" class="d-flex align-items-center">
                                             <input type="hidden" name="ProductId" value="@item.Product.Id" />
-                                            <input type="number" name="Quantity" value="@item.Quantity" min="1" class="form-control form-control-sm me-2" style="width: 70px;" />
+                                            <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control form-control-sm me-2" style="width: 70px;" />
                                             <button class="btn btn-sm btn-outline-success" type="submit">
-                                                <i class="bi bi-arrow-repeat"></i>
+                                                <i class="fas fa-sync-alt"></i>
                                             </button>
                                         </form>
                                     </td>
@@ -55,12 +55,9 @@
                                         @((item.Quantity * item.Product.Price).ToString("c"))
                                     </td>
                                     <td class="text-center">
-                                        <form asp-action="Remove" asp-controller="Cart" method="post">
-                                            <input type="hidden" name="ProductId" value="@item.Product.Id" />
-                                            <button class="btn btn-sm btn-outline-danger" type="submit">
-                                                <i class="bi bi-x-lg"></i>
-                                            </button>
-                                        </form>
+                                        <a asp-action="Remove" asp-controller="Cart" asp-route-ProductId="@item.Product.Id" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             }
@@ -92,7 +89,7 @@
                             </tr>
                         </table>
                         <div class="d-grid mt-3">
-                            <a href="/Cart/Index" class="btn btn-warning btn-lg">Satın Al</a>
+                            <a href="/Cart/Checkout" class="btn btn-warning btn-lg">Satın Al</a>
                         </div>
                     </div>
                 </div>

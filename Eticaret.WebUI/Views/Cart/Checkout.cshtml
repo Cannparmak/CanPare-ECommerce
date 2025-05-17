@@ -1,0 +1,158 @@
+@model CheckoutViewModel
+
+@{
+    ViewData["Title"] = "Ödeme";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-primary">Sepetiniz</span>
+                <span class="badge bg-primary rounded-pill">@Model.CartLines.Count</span>
+            </h4>
+            <ul class="list-group mb-3">
+                @foreach (var item in Model.CartLines)
+                {
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">@item.Product.Name</h6>
+                            <small class="text-muted">@item.Quantity adet</small>
+                        </div>
+                        <span class="text-muted">@((item.Product.Price * item.Quantity).ToString("c"))</span>
+                    </li>
+                }
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                    <div class="text-success">
+                        <h6 class="my-0">Kargo</h6>
+                        <small>@(Model.ShippingCost > 0 ? "Standart Kargo" : "Ücretsiz Kargo")</small>
+                    </div>
+                    <span class="text-success">@(Model.ShippingCost > 0 ? Model.ShippingCost.ToString("c") : "BEDAVA")</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Toplam (TL)</span>
+                    <strong>@Model.GrandTotal.ToString("c")</strong>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Ödeme Bilgileri</h4>
+            <form asp-action="Checkout" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="LastName" class="form-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Address" class="form-label"></label>
+                    <textarea asp-for="Address" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label asp-for="City" class="form-label"></label>
+                        <input asp-for="City" class="form-control" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="District" class="form-label"></label>
+                        <input asp-for="District" class="form-control" />
+                        <span asp-validation-for="District" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label asp-for="ZipCode" class="form-label"></label>
+                        <input asp-for="ZipCode" class="form-control" />
+                        <span asp-validation-for="ZipCode" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <h4 class="mb-3">Ödeme Yöntemi</h4>
+
+                <div class="credit-card-form p-3 mb-4 border rounded bg-light">
+                    <div class="mb-3">
+                        <label asp-for="CardholderName" class="form-label"></label>
+                        <input asp-for="CardholderName" class="form-control" />
+                        <span asp-validation-for="CardholderName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="CardNumber" class="form-label"></label>
+                        <input asp-for="CardNumber" class="form-control" placeholder="1234 5678 9012 3456" />
+                        <span asp-validation-for="CardNumber" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="ExpiryDate" class="form-label"></label>
+                            <input asp-for="ExpiryDate" class="form-control" placeholder="12/25" />
+                            <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="CVV" class="form-label"></label>
+                            <input asp-for="CVV" class="form-control" placeholder="123" />
+                            <span asp-validation-for="CVV" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-warning btn-lg btn-block w-100" type="submit">Ödemeyi Tamamla</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .credit-card-form {
+        background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        // Kart numarasını formatlama
+        $(document).ready(function() {
+            $('#CardNumber').on('input', function() {
+                $(this).val($(this).val().replace(/\D/g, '').substring(0, 16));
+            });
+            
+            // Tarih formatını otomatik olarak ayarla
+            $('#ExpiryDate').on('input', function() {
+                let val = $(this).val().replace(/\D/g, '');
+                if (val.length > 2) {
+                    val = val.substring(0, 2) + '/' + val.substring(2, 4);
+                }
+                $(this).val(val);
+            });
+            
+            // CVV sadece sayı girişine izin ver
+            $('#CVV').on('input', function() {
+                $(this).val($(this).val().replace(/\D/g, '').substring(0, 3));
+            });
+        });
+    </script>
+} 

@@ -1,58 +1,88 @@
 ﻿using Eticaret.Core.Entities;
+using Eticaret.Data;
 using Eticaret.Service.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace Eticaret.Service.Concrete
 {
-    public class CartService : ICartService
+    public class CartService : Service<Cart>, ICartService
     {
-        public List<CartLine> CartLines = new();
-        public void AddProduct(Product product, int quantity)
+        private readonly DatabaseContext _context;
+
+        public CartService(DatabaseContext context) : base(context)
         {
-            var urun = CartLines.FirstOrDefault(p=>p.Product.Id == product.Id);
-            if (urun != null)
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Cart>> GetCartsByUserIdAsync(int userId)
+        {
+            return await _context.Carts
+                .Include(c => c.Product)
+                .Where(c => c.AppUserId == userId)
+                .ToListAsync();
+        }
+
+        public async Task<bool> AddToCartAsync(int userId, int productId, int quantity = 1)
+        {
+            // Ürünün sepette olup olmadığını kontrol et
+            var existingCartItem = await _context.Carts
+                .FirstOrDefaultAsync(c => c.AppUserId == userId && c.ProductId == productId);
+
+            if (existingCartItem != null)
             {
-                urun.Quantity += quantity;
+                // Varsa miktarını artır
+                existingCartItem.Quantity += quantity;
             }
             else
             {
-                CartLines.Add(new CartLine
+                // Yoksa yeni ekle
+                var newCartItem = new Cart
                 {
+                    AppUserId = userId,
+                    ProductId = productId,
                     Quantity = quantity,
-                    Product = product,
-                });
+                    CreateDate = DateTime.Now
+                };
+                await _context.Carts.AddAsync(newCartItem);
             }
+
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public void ClearAll()
+        public async Task<bool> RemoveFromCartAsync(int userId, int productId)
         {
-            CartLines.Clear();
-        }
+            var cartItem = await _context.Carts
+                .FirstOrDefaultAsync(c => c.AppUserId == userId && c.ProductId == productId);
 
-        public void RemoveProduct(Product product)
-        {
-            CartLines.RemoveAll(p=>p.Product.Id == product.Id);
-        }
-
-        public decimal TotalPrice()
-        {
-            return CartLines.Sum(c=>c.Product.Price * c.Quantity);
-        }
-
-        public void UpdateProduct(Product product, int quantity)
-        {
-            var urun = CartLines.FirstOrDefault(p => p.Product.Id == product.Id);
-            if (urun != null)
+            if (cartItem != null)
             {
-                urun.Quantity = quantity;
+                _context.Carts.Remove(cartItem);
+                return await _context.SaveChangesAsync() > 0;
             }
-            else
+
+            return false;
+        }
+
+        public async Task<bool> ClearCartAsync(int userId)
+        {
+            var cartItems = await _context.Carts
+                .Where(c => c.AppUserId == userId)
+                .ToListAsync();
+
+            if (cartItems.Any())
             {
-                CartLines.Add(new CartLine
-                {
-                    Quantity = quantity,
-                    Product = product,
-                });
+                _context.Carts.RemoveRange(cartItems);
+                return await _context.SaveChangesAsync() > 0;
             }
+
+            return false;
+        }
+
+        public async Task<int> GetCartCountAsync(int userId)
+        {
+            return await _context.Carts
+                .Where(c => c.AppUserId == userId)
+                .CountAsync();
         }
     }
 }

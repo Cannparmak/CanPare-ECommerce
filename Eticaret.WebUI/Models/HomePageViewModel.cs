@@ -7,5 +7,6 @@ namespace Eticaret.WebUI.Models
         public List<Slider>? Sliders { get; set; }
         public List<Product>? Products { get; set; }
         public List<News>? News { get; set; }
+        public List<Product>? FavoriteProducts { get; set; }
     }
 }

@@ -19,21 +19,19 @@
                 </div>
                 <p class="lead">@Model.Product.Description</p>
                 <div class="d-flex">
-                    <form asp-action="Add" asp-controller="Cart" class="d-flex">
-                        <input type="hidden" name="ProductId" value="@Model.Product.Id" />
-                        <input class="form-control text-center me-3" name="quantity" id="inputQuantity" type="number" value="1" style="max-width: 5rem">
-                        <button class="btn btn-cart flex-shrink-0" type="submit">
+                    <div class="d-flex me-3">
+                        <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 5rem">
+                        <button class="btn btn-cart flex-shrink-0 cart-button" type="button" 
+                                data-product-id="@Model.Product.Id" onclick="addToCartWithQuantity(this)">
                             <i class="bi-cart-fill me-1"></i>
                             Sepete Ekle
                         </button>
-                    </form>
-                    <form asp-action="Add" asp-controller="Favorites" class="d-flex ms-2">
-                        <input type="hidden" name="ProductId" value="@Model.Product.Id" />
-                        <button class="btn btn-favorite flex-shrink-0" type="submit">
-                            <i class="bi-heart-fill me-1"></i>
-                            Favorilere Ekle
-                        </button>
-                    </form>
+                    </div>
+                    <button class="btn btn-favorite flex-shrink-0 favorite-button" type="button" 
+                            data-product-id="@Model.Product.Id" onclick="addToFavorites(@Model.Product.Id, this)">
+                        <i class="bi-heart-fill me-1"></i>
+                        Favorilere Ekle
+                    </button>
                 </div>
             </div>
         </div>
@@ -95,3 +93,18 @@
             transform: scale(1.05);
         }
 </style>
+
+<!-- JavaScript için ek fonksiyon -->
+<script>
+    function addToCartWithQuantity(button) {
+        var productId = $(button).data('product-id');
+        var quantity = $('#inputQuantity').val();
+        addToCart(productId, button, quantity);
+    }
+    
+    // Sayfa yüklendiğinde favori durumunu kontrol et
+    $(document).ready(function() {
+        var productId = @Model.Product.Id;
+        checkFavoriteStatus(productId, $('.favorite-button'));
+    });
+</script>

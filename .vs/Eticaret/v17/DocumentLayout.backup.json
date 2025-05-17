@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|solutionrelative:eticaret.core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C37172AF-D911-486C-9222-9D7F2819690A}|Eticaret.Data\\Eticaret.Data.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37172AF-D911-486C-9222-9D7F2819690A}|Eticaret.Data\\Eticaret.Data.csproj|solutionrelative:eticaret.data\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|solutionrelative:eticaret.core\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.core\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|solutionrelative:eticaret.core\\entities\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.core\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|solutionrelative:eticaret.core\\entities\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.core\\entities\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55E1E8E8-8B5B-46CF-94AA-E50E0BF997ED}|Eticaret.Core\\Eticaret.Core.csproj|solutionrelative:eticaret.core\\entities\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AC3BBBE5-805F-440D-8C29-649320460BC8}|Eticaret.WebUI\\Eticaret.WebUI.csproj|c:\\users\\can parmak\\desktop\\eticaret\\eticaret.webui\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AC3BBBE5-805F-440D-8C29-649320460BC8}|Eticaret.WebUI\\Eticaret.WebUI.csproj|solutionrelative:eticaret.webui\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -42,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +78,81 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Comment.cs",
+              "RelativeDocumentMoniker": "Eticaret.Core\\Entities\\Comment.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Comment.cs",
+              "RelativeToolTip": "Eticaret.Core\\Entities\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T13:01:38.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Eticaret.Core\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Order.cs",
+              "RelativeToolTip": "Eticaret.Core\\Entities\\Order.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:54:19.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\AppUser.cs",
+              "RelativeDocumentMoniker": "Eticaret.Core\\Entities\\AppUser.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\AppUser.cs",
+              "RelativeToolTip": "Eticaret.Core\\Entities\\AppUser.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwBkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:51:25.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Data\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Eticaret.Data\\DatabaseContext.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Data\\DatabaseContext.cs",
+              "RelativeToolTip": "Eticaret.Data\\DatabaseContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:50:50.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Brand.cs",
+              "RelativeDocumentMoniker": "Eticaret.Core\\Entities\\Brand.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\Brand.cs",
+              "RelativeToolTip": "Eticaret.Core\\Entities\\Brand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:50:38.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\IEntity.cs",
+              "RelativeDocumentMoniker": "Eticaret.Core\\Entities\\IEntity.cs",
+              "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.Core\\Entities\\IEntity.cs",
+              "RelativeToolTip": "Eticaret.Core\\Entities\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:50:10.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FavoritesController.cs",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Controllers\\FavoritesController.cs",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Controllers\\FavoritesController.cs",
@@ -66,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "_Header.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Shared\\_Header.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Shared\\_Header.cshtml",
@@ -78,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\wwwroot\\css\\site.css",
@@ -90,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "_Slider.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Shared\\_Slider.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Shared\\_Slider.cshtml",
@@ -102,20 +200,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Cart\\Index.cshtml",
               "ToolTip": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Cart\\Index.cshtml",
               "RelativeToolTip": "Eticaret.WebUI\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-11T13:03:02.15Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T13:03:02.15Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Favorites\\Index.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Favorites\\Index.cshtml",
@@ -127,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "_ProductView.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Shared\\_ProductView.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Shared\\_ProductView.cshtml",
@@ -139,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Can Parmak\\Desktop\\Eticaret\\Eticaret.WebUI\\Views\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "Eticaret.WebUI\\Views\\Products\\Details.cshtml",

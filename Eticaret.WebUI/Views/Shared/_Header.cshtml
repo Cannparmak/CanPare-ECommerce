@@ -1,4 +1,9 @@
 ﻿@using Eticaret.WebUI.ExtensionMethods
+@using Eticaret.Core.Entities
+@using System.Security.Claims
+@inject Eticaret.Service.Abstract.ICartService CartService
+@inject Eticaret.Service.Abstract.IFavoriteService FavoriteService
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -182,15 +187,18 @@
                 </ul>
 
                 <div class="navbar-actions">
-                    @if (Context.User.Identity.IsAuthenticated)
+                    @if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
                     {
                         <div class="dropdown">
                             <a class="btn btn-warning dropdown-toggle nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Hesabım
+                                <i class="fas fa-user-circle me-1"></i> @HttpContextAccessor.HttpContext.User.Identity.Name
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/Account">Bilgilerim</a></li>
-                                <li><a class="dropdown-item" href="/Account/SignOut">Oturumu Kapat</a></li>
+                                <li><a class="dropdown-item" href="/Account"><i class="fas fa-id-card me-2"></i>Bilgilerim</a></li>
+                                <li><a class="dropdown-item" href="/Account/MyOrders"><i class="fas fa-box me-2"></i>Siparişlerim</a></li>
+                                <li><a class="dropdown-item" href="/Favorites"><i class="fas fa-heart me-2"></i>Favorilerim</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/Account/SignOut"><i class="fas fa-sign-out-alt me-2"></i>Oturumu Kapat</a></li>
                             </ul>
                         </div>
                     }
@@ -208,24 +216,44 @@
                     }
 
                     @{
-                        var cart = Context.Session.GetJsson<Eticaret.Service.Concrete.CartService>("Cart");
-                        if (cart != null && cart.CartLines.Count > 0)
+                        var cartItems = new List<Cart>();
+                        int cartCount = 0;
+                        int favoriteCount = 0;
+                        
+                        if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+                        {
+                            var userIdClaim = HttpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                            if (!string.IsNullOrEmpty(userIdClaim))
+                            {
+                                if (int.TryParse(userIdClaim, out int userId))
+                                {
+                                    cartItems = (await CartService.GetCartsByUserIdAsync(userId)).ToList();
+                                    cartCount = cartItems.Count;
+                                    favoriteCount = await FavoriteService.GetFavoritesCountAsync(userId);
+                                }
+                            }
+                        }
+                        
+                        if (cartCount > 0)
                         {
                             <div class="dropdown">
                                 <a class="btn btn-warning dropdown-toggle nav-link text-dark d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-shopping-cart"></i> Sepetim
-                                    <span class="badge bg-danger ms-1">@cart.CartLines.Count</span>
+                                    <span class="badge bg-danger ms-1">@cartCount</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    @foreach (var item in cart.CartLines)
+                                    @foreach (var item in cartItems)
                                     {
-                                        <li>
-                                            <a class="dropdown-item" href="/Products/Details/@item.Product.Id">
-                                                <img src="/Img/Products/@item.Product.Image" alt="" />
-                                                <span>@item.Product.Name</span>
-                                                <span>@item.Product.Price.ToString("c") ₺</span>
-                                            </a>
-                                        </li>
+                                        if (item.Product != null) // Null kontrolü eklendi
+                                        {
+                                            <li>
+                                                <a class="dropdown-item" href="/Products/Details/@item.ProductId">
+                                                    <img src="/Img/Products/@item.Product.Image" alt="@item.Product.Name" />
+                                                    <span>@item.Product.Name</span>
+                                                    <span>@item.Product.Price.ToString("c") ₺</span>
+                                                </a>
+                                            </li>
+                                        }
                                     }
                                     <li class="text-center">
                                         <a class="btn btn-success m-auto mt-2" href="/Cart">Sepete Git</a>
@@ -239,11 +267,19 @@
                                 <i class="fas fa-shopping-cart text-warning"></i> Sepetim
                             </a>
                         }
-                    }
 
-                    <a class="btn btn-outline-warning d-flex align-items-center gap-2 text-dark" href="/Favorites">
-                        <i class="fas fa-heart text-danger"></i> Favorilerim
-                    </a>
+                        <a id="favorite-header-link" class="btn btn-outline-warning d-flex align-items-center gap-2 text-dark" href="/Favorites">
+                            <i class="fa-heart @(favoriteCount > 0 ? "fas text-danger" : "far")"></i> Favorilerim
+                            @if (favoriteCount > 0)
+                            {
+                                <span class="badge bg-danger ms-1" id="favorite-count-badge">@favoriteCount</span>
+                            }
+                            else
+                            {
+                                 <span class="badge bg-danger ms-1" id="favorite-count-badge" style="display:none;">0</span>
+                            }
+                        </a>
+                    }
                 </div>
             </div>
         </div>

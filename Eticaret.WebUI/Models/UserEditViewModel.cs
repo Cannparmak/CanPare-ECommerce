@@ -15,6 +15,8 @@ namespace Eticaret.WebUI.Models
         public string Email { get; set; }
         [Display(Name = "Telefon")]
         public string? Phone { get; set; }
+        [Display(Name = "Adres")]
+        public string? Address { get; set; }
         [Required(ErrorMessage = "Şifre alanı zorunludur.")]
         [Display(Name = "Şifre")]
         public string Password { get; set; }

@@ -28,7 +28,8 @@ namespace Eticaret.WebUI.Controllers
             {        
                 Sliders = await _serviceSlider.GetAllAsync(),
                 News = await _serviceNews.GetAllAsync(p => p.IsActive),
-                Products = await _serviceProduct.GetAllAsync(p=>p.IsActive && p.IsHome)
+                Products = await _serviceProduct.GetAllAsync(p=>p.IsActive && p.IsHome),
+                FavoriteProducts = await _serviceProduct.GetAllAsync(p=>p.IsActive && (p.Price > 500))
             };
             //var databaseContext = _serviceSlider.Include(s => s.Category);
             return View(model);
@@ -60,7 +61,7 @@ namespace Eticaret.WebUI.Controllers
                     {
                         TempData["Message"] = @"<div class=""alert alert-success alert-dismissible fade show"" 
                            role=""alert"">
-                         <strong>Mesajýnýz Baþarýyla Gönderilmiþtir!</strong>
+                         <strong>Mesajï¿½nï¿½z Baï¿½arï¿½yla Gï¿½nderilmiï¿½tir!</strong>
   <button type=""button"" class=""btn-close"" data-bs-dismiss=""alert"" aria-label=""Close""></button>
 </div>";
                       // await MailHelper.SendMailAsync(contact);
@@ -70,7 +71,7 @@ namespace Eticaret.WebUI.Controllers
                 catch (Exception)
                 {
 
-                    ModelState.AddModelError("", "Hata Oluþtu");
+                    ModelState.AddModelError("", "Hata Oluï¿½tu");
                 }
             }
             return View(contact);

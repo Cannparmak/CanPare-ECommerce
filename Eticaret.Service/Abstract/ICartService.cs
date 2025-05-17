@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Eticaret.Service.Abstract
 {
-    public interface ICartService
+    public interface ICartService : IService<Cart>
     {
-        void AddProduct(Product product, int quantity);
-        void UpdateProduct(Product product, int quantity);
-        void RemoveProduct(Product product);
-        decimal TotalPrice();
-        void ClearAll();
+        Task<IEnumerable<Cart>> GetCartsByUserIdAsync(int userId);
+        Task<bool> AddToCartAsync(int userId, int productId, int quantity = 1);
+        Task<bool> RemoveFromCartAsync(int userId, int productId);
+        Task<bool> ClearCartAsync(int userId);
+        Task<int> GetCartCountAsync(int userId);
     }
 }

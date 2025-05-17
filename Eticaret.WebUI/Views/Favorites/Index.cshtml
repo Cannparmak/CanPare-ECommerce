@@ -1,69 +1,112 @@
-﻿@model List<Product>
+﻿@model IEnumerable<Eticaret.Core.Entities.Favorite>
+
 @{
     ViewData["Title"] = "Favorilerim";
 }
-<style>
-    .card:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transform: translateY(-5px);
-        transition: all 0.3s ease;
-        z-index: 10;
-        position: relative;
-    }
-</style>
-<section class="container my-5">
-    <div class="text-center">
+
+<div class="container my-5">
+    <div class="text-center mb-4">
         <h1 class="display-4">Favorilerim</h1>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-12">
-            @if (Model.Any())
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var favoriteItem in Model)
             {
-                <div class="row mt-4">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                            <div class="card h-100 shadow-sm">
-                                <a href="/Products/Details/@item.Id" class="text-decoration-none">
-                                    <div class="ratio ratio-4x3">
-                                        <img src="/Img/Products/@item.Image" class="card-img-top object-fit-cover" alt="@item.Name" style="object-fit: contain; padding: 10px;" />
-                                    </div>
-                                </a>
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">@item.Name</h5>
-                                    <p class="card-text fw-bold">@item.Price.ToString("c")</p>
-                                    <div class="d-flex justify-content-between gap-2">
-                                        <a href="/Cart/Add/@item.Id" class="btn btn-outline-success flex-grow-1">
-                                            <i class="bi bi-cart-plus"></i> Sepete Ekle
+                if (favoriteItem.Product != null)
+                {
+                    <div class="col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <a asp-controller="Products" asp-action="Details" asp-route-id="@favoriteItem.ProductId">
+                                <img src="/Img/Products/@favoriteItem.Product.Image" class="card-img-top" alt="@favoriteItem.Product.Name" style="height: 200px; object-fit: contain; padding: 10px;">
+                            </a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">
+                                    <a asp-controller="Products" asp-action="Details" asp-route-id="@favoriteItem.ProductId" class="text-decoration-none text-dark">
+                                        @favoriteItem.Product.Name
+                                    </a>
+                                </h5>
+                                <p class="card-text text-muted small">@favoriteItem.Product.Description?.Substring(0, Math.Min(favoriteItem.Product.Description.Length, 50))</p>
+                                <div class="mt-auto">
+                                    <p class="card-text fs-5 fw-bold text-primary">@favoriteItem.Product.Price.ToString("c")</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a asp-controller="Cart" asp-action="Add" asp-route-productId="@favoriteItem.ProductId" class="btn btn-sm btn-outline-warning">
+                                            <i class="fas fa-cart-plus"></i> Sepete Ekle
                                         </a>
-                                        <form asp-action="Remove" asp-controller="Favorites" method="post">
-                                            <input type="hidden" name="ProductId" value="@item.Id" />
-                                            <button type="submit" class="btn btn-danger">
-                                                <i class="bi bi-x-lg"></i> Kaldır
-                                            </button>
-                                        </form>
+                                        <a asp-controller="Favorites" asp-action="RemoveFromFavorites" asp-route-productId="@favoriteItem.ProductId" class="btn btn-sm btn-outline-danger remove-from-favorites" data-product-id="@favoriteItem.ProductId">
+                                            <i class="fas fa-heart-broken"></i> Çıkar
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    }
-                </div>
-            }
-            else
-            {
-                <div class="container">
-                    <div class="alert alert-secondary my-5 text-center">
-                        <h1>Burada Şimdilik Kimse Yok 🙈</h1>
-                        <h5>Favorilerinizde ürün bulunmamaktadır!</h5>
-                        <p>
-                            <a href="/Products/Index" class="btn btn-warning mt-3">Tüm ürünleri keşfet</a>
-                        </p>
                     </div>
-                    <div class="text-center">
-                        <img src="~/Img/Favoriler.gif" alt="Favoriler" class="img-fluid mt-4" style="max-height: 300px;" />
-                    </div>
-                </div>
+                }
             }
         </div>
-    </div>
-</section>
+    }
+    else
+    {
+        <div class="alert alert-info text-center shadow-sm">
+            <h4 class="alert-heading">Favori Ürününüz Yok!</h4>
+            <p>Beğendiğiniz ürünleri favorilerinize ekleyerek daha sonra kolayca bulabilirsiniz.</p>
+            <hr>
+            <p class="mb-0">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Alışverişe Başla</a>
+            </p>
+        </div>
+        <div class="text-center">
+            <img src="~/Img/EmptyFavorite.png" alt="Favori Boş" class="img-fluid mt-4" style="max-height: 300px;" />
+        </div>
+    }
+</div>
+
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $('.remove-from-favorites').click(function (e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+            var button = $(this);
+
+            $.ajax({
+                url: '@Url.Action("RemoveFromFavorites", "Favorites")',
+                type: 'POST',
+                data: { productId: productId },
+                success: function (response) {
+                    if (response.success) {
+                        button.closest('.col-md-4').fadeOut(500, function() { $(this).remove(); });
+                        updateFavoriteCountHeader(response.favoriteCount);
+
+                        if ($('.col-md-4').length === 1) { 
+                            setTimeout(function(){ 
+                                if ($('.col-md-4').length === 0) {
+                                     window.location.reload(); 
+                                }
+                            }, 600);
+                        }
+                    } else {
+                        alert(response.message || "Bir hata oluştu.");
+                    }
+                },
+                error: function () {
+                    alert("Favorilerden çıkarılırken bir hata oluştu.");
+                }
+            });
+        });
+    });
+
+    function updateFavoriteCountHeader(count) {
+        var favoriteBadge = $('#favorite-count-badge'); 
+        var favoriteHeaderLink = $('#favorite-header-link');
+        if(count > 0) {
+            favoriteHeaderLink.find('.fa-heart').removeClass('far').addClass('fas text-danger');
+             favoriteHeaderLink.find('.badge').text(count).show();
+        } else {
+            favoriteHeaderLink.find('.fa-heart').removeClass('fas text-danger').addClass('far');
+            favoriteHeaderLink.find('.badge').text(0).hide();
+        }
+    }
+</script>
+}
